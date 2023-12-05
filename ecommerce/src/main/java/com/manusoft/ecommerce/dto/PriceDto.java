@@ -1,16 +1,20 @@
 package com.manusoft.ecommerce.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Data
 public class PriceDto {
     private int productId;
 
     private int brandId;
 
-    private float price;
+    private Double price;
 
     private String startDate;
 
