@@ -1,6 +1,6 @@
 package com.manusoft.ecommerce.controller;
 
-import com.manusoft.ecommerce.model.Price;
+import com.manusoft.ecommerce.dto.PriceDto;
 import com.manusoft.ecommerce.service.PriceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +21,13 @@ public class PriceController {
     private PriceService priceService;
 
     @GetMapping("/price/{applyingDate}/{productId}/{brandId}")
-    public Price getProductPriceByParams(@PathVariable LocalDateTime applyingDate,
-                        @PathVariable Long productId,
-                        @PathVariable Long brandId){
+    public PriceDto getProductPriceByParams(@PathVariable LocalDateTime applyingDate,
+                                            @PathVariable Long productId,
+                                            @PathVariable Long brandId){
         LOGGER.info(">> PriceController getProductPriceByDate() applyingDate: {} productId: {} brandId: {}", applyingDate, productId, brandId);
-        Price price = priceService.getProductPriceByParams(applyingDate, productId, brandId);
-        LOGGER.info("<< PriceController getProductPriceByDate() price: {}", price);
-        return price;
+        PriceDto priceDto = priceService.getProductPriceByParams(applyingDate, productId, brandId);
+        LOGGER.info("<< PriceController getProductPriceByDate() priceDto: {}", priceDto);
+        return priceDto;
     }
 
 }

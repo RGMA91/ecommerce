@@ -1,10 +1,10 @@
 package com.manusoft.ecommerce.service;
 
-import com.manusoft.ecommerce.model.Price;
+import com.manusoft.ecommerce.dto.PriceDto;
 
 import java.time.LocalDateTime;
 
 public interface PriceService {
-        Price getProductPriceByParams(LocalDateTime applyingDate, Long productId, Long brandId);
+        PriceDto getProductPriceByParams(LocalDateTime applyingDate, Long productId, Long brandId);
 
 }

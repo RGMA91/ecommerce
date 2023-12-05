@@ -9,10 +9,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "PRICES")
 public class Price implements Serializable {
